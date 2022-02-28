@@ -98,8 +98,30 @@ app.use((request, response) => {response.writeHead(200, {"Access-Control-Allow-O
                     )
                 ){
                     const newHumansData = humansWithoutHuman(humansData,requestBody);
-                    writeDatabaseNewPassword(newHumansData,requestBody);
-                    response.end(JSON.stringify("change password"));
+
+                    const regex = /^[A-Za-z0-9]+$/;
+
+                    const password = JSON.parse(requestBody.toString()).data.new_password
+
+                    console.log(password)
+
+                    if(!regex.test(password)) {
+                        response.end(JSON.stringify("Password very simple."));
+                    }else{
+                        if(password.length<10){
+                            response.end(JSON.stringify("The password must be longer than 10 characters"));
+                        }else if (password.search(/[a-z]/) < 0) {
+                            response.end(JSON.stringify("The password must contain at least one lowercase letter"));
+                        }else if (password.search(/[A-Z]/) < 0) {
+                            response.end(JSON.stringify("The password must contain at least one uppercase letter"));
+                        }else if (password.search(/[0-9]/i) < 0) {
+                            response.end(JSON.stringify("The password must contain at least one number"));
+                        }else{
+                            writeDatabaseNewPassword(newHumansData,requestBody);
+                            response.end(JSON.stringify("change password"));
+                        }
+
+                    }
                 }else{
                     response.end(JSON.stringify("password wrong"));
                 }

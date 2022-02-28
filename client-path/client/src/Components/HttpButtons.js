@@ -27,9 +27,9 @@ const HttpButtons = (props) => {
             },
             data: {login, password,new_password}
         }).then(res => {
-            alert(JSON.stringify(res.data))
-            localStorage.setItem("myPassword",new_password);
-
+            if(res.data === "change password"){
+                localStorage.setItem("myPassword",new_password);
+            }
         })
     }
 
