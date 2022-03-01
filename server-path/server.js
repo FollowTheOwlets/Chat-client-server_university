@@ -25,7 +25,6 @@ app.listen(HTTP_PORT, () => {
 	console.log(`HTTP server listening on port ${HTTP_PORT}`);
 })
 
-Ы
 //Server for sockets PORT : 4000
 const SOCKET_PORT = 4000;
 const httpServer = createServer();
