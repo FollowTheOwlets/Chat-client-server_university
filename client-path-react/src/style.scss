@@ -1,0 +1,199 @@
+/* import bootstrap to set changes bootstrap/scss/bootstrap*/
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.btn-outline-light {
+  color: #5c636a;
+}
+
+.btn-outline-light:hover {
+  animation: 0.1s border-animated forwards;
+}
+
+@keyframes border-animated{
+  0% {
+    border: 1px solid #dcdcdc;
+  }
+  100% {
+    border: 1px solid #1e2125;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  .registration_page {
+    padding: 30px;
+    width: 50vw;
+    height: 80vh;
+    background-color: darksalmon;
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .button_reg_auth {
+      position: absolute;
+      top: 15px;
+      right: 50px;
+    }
+
+    .form-label {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+  }
+
+  & > .card {
+    width: 70vw;
+    height: 70vh;
+
+    .card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .second-header-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .card-header-title {
+        font-size: 25px;
+      }
+
+      #id-in-menu {
+        opacity: 0.6;
+      }
+
+      .menu-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+          margin-left: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    & > .card-body {
+      padding: 0;
+
+      .mails-block {
+        overflow: auto;
+        min-height: 45vh;
+        max-height: 45vh;
+      }
+
+      .under-menu {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        border-bottom: 1px solid #d4d4d4;
+        padding: 6px 10px 10px;
+        margin: 0px 10px;
+        button{
+          margin-right:10px;
+        }
+      }
+
+      /*Messages*/
+      .text-bg-dark {
+        color: #fff !important;
+        background-color: #a3a3a3 !important;
+      }
+
+      .message.card {
+        position: relative;
+        margin: 10px 10px 20px;
+
+        .card-header {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-start;
+
+          .sender-block {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            flex-direction: row;
+
+            .sender-of-message {
+              margin-right: 20px;
+              font-size: 15px;
+            }
+
+            .from-span {
+              margin-right: 10px;
+              font-size: 12px;
+              opacity: 0.6;
+            }
+          }
+
+          .time-of-message {
+            margin-right: 10px;
+            font-size: 15px;
+          }
+        }
+
+        .btn-apply {
+          font-size: 10px;
+          position: absolute;
+          top: 7px;
+          right: 40px;
+        }
+
+        .btn-read {
+          font-size: 10px;
+        }
+
+        .btn-close {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
+
+        .title-block {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          padding: 5px 30px 5px 5px;
+          border-bottom: 1px solid #c2c2c2;
+          width: fit-content;
+          margin-bottom: 6px;
+
+          .title-span {
+            margin-right: 10px;
+            font-size: 12px;
+            opacity: 0.6;
+          }
+
+          .title-of-message {
+            font-size: 15px;
+          }
+
+        }
+
+        .text-of-message {
+          padding: 5px 0;
+        }
+
+      }
+
+    }
+
+  }
+}

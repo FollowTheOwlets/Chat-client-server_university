@@ -1,4 +1,7 @@
-node_modules
+client-path/node_modules
+client-path-react/node_modules
+server-path/node_modules
+
 .DS_Store
 dist
 dist-ssr
