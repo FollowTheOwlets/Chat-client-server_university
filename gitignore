@@ -5,7 +5,7 @@ dist-ssr
 *.local
 
 # JetBrains
-/.idea
+.idea
 
 # VSCode
 .vscode/*
